@@ -36,7 +36,7 @@ public class TrainerControllerImpl implements ITrainerController {
        for(int i=0;i<3;i++)
        {
     	   TrainerCompanyModel compModel = new TrainerCompanyModel();
-    	   compModel.setTrainerCompanyId("00608V_"+i);
+    	   compModel.setTrainerCompanyId("00608V"+i);
     	   compModel.setTrainerDesignation("Rest Services lead_"+i);
     	   compModel.setTrainerLocation("Manyatha_"+i);
     	   modelList.add(compModel);
@@ -56,14 +56,14 @@ public class TrainerControllerImpl implements ITrainerController {
 	/**
 	 * 
 	 */
-	public TrainerCompanyModel getTrainerCompanyModelByTrainerId(@PathVariable String trainerId) {
+	public TrainerCompanyModel getTrainerCompanyModelByTrainerId(@PathVariable String id) {
 		String methodName = "getTrainerCompanyModelByTrainerId";
 		log.info(className+"->"+methodName);
 		TrainerCompanyModel compModel = new TrainerCompanyModel();
 		modelList.forEach(trainerModel ->{
-			if(trainerModel.getTrainerCompanyId().equalsIgnoreCase(trainerId))
+			if(trainerModel.getTrainerCompanyId().equalsIgnoreCase(id))
 			{
-				compModel.setTrainerCompanyId(trainerId);
+				compModel.setTrainerCompanyId(id);
 				compModel.setTrainerDesignation(trainerModel.getTrainerDesignation());
 				compModel.setTrainerLocation(trainerModel.getTrainerLocation());
 			}

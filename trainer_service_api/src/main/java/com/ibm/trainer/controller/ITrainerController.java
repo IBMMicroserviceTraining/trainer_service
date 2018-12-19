@@ -15,5 +15,5 @@ public interface ITrainerController {
 	public List<TrainerCompanyModel> getAllTrainerCompanyModel();
 	
 	@RequestMapping(value="/get/info/{id}",method=RequestMethod.GET)
-	public TrainerCompanyModel getTrainerCompanyModelByTrainerId(@PathVariable("id") String trainerId);
+	public TrainerCompanyModel getTrainerCompanyModelByTrainerId(@PathVariable("id") String id);
 }
